@@ -163,7 +163,7 @@ a {
   padding: 20px;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 930px) {
   .leftScreen, .rightScreen {
     width: 100%;
   }
