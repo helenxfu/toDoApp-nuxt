@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>下記フォームからタスクを入力してください</p>
+    <p>{{ $t('text.none') }}</p>
   </div>
 </template>
 

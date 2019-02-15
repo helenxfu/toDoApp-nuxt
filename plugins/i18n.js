@@ -18,7 +18,7 @@ const messages = {
       today: 'TODAY!', passed: 'PASSED!!', count: 'Days Remain: '
     },
     text: {
-      subtitle: 'Todo Application for your long term goals', made: 'Made with Nuxt', more: 'For more infirmation...'
+      subtitle: 'Todo Application for your long term goals', made: 'Made with Nuxt', more: 'For more infirmation...', none: 'Please add tasks from the form below'
     }
   },
   ja: {
@@ -35,7 +35,7 @@ const messages = {
       today: '今日!', passed: '期限過ぎ!', count: '残留日数: '
     },
     text: {
-      subtitle: 'Todo Application for your long term goals', made: 'Made with Nuxt', more: 'For more infirmation...'
+      subtitle: 'Todo Application for your long term goals', made: 'Made with Nuxt', more: 'For more infirmation...', none: '下記フォームからタスクを入力してください'
     }
   },
   zh: {
@@ -52,7 +52,7 @@ const messages = {
       today: '今天！', passed: '过期了！', count: '剩余天数: '
     },
     text: {
-      subtitle: 'Todo Application for your long term goals', made: 'Made with Nuxt', more: 'For more infirmation...'
+      subtitle: 'Todo Application for your long term goals', made: 'Made with Nuxt', more: 'For more infirmation...', none: '请追加项目'
     }
   }
 }
