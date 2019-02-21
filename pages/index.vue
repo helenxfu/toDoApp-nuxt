@@ -109,7 +109,7 @@ export default {
       this.todos.sort((a, b) => a.category < b.category ? 1 : -1).sort(done => done.completed ? 1 : -1)
     },
     deleteAll() {
-      this.todos = []
+      if (confirm(this.$t('text.warning'))) this.todos = []
     },
     deleteCompleted() {
       this.todos = this.todos.filter(x => !x.completed)

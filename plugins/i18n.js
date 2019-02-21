@@ -18,7 +18,7 @@ const messages = {
       today: 'TODAY!', passed: 'PASSED!!', count: 'Days Remain: '
     },
     text: {
-      subtitle: 'Todo Application for your long term goals', made: 'Made with Nuxt', more: 'For more infirmation...', none: 'Please add tasks from the form below'
+      subtitle: 'Todo Application for your long term goals', made: 'Made with Nuxt', more: 'For more infirmation...', none: 'Please add tasks from the form below', warning: 'Are you sure you want to delete all tasks?'
     }
   },
   ja: {
@@ -35,7 +35,7 @@ const messages = {
       today: '今日!', passed: '期限過ぎ!', count: '残留日数: '
     },
     text: {
-      subtitle: 'Todo Application for your long term goals', made: 'Made with Nuxt', more: 'For more infirmation...', none: '下記フォームからタスクを入力してください'
+      subtitle: 'Todo Application for your long term goals', made: 'Made with Nuxt', more: 'For more infirmation...', none: '下記フォームからタスクを入力してください', warning: '本当に全てのタスクを削除してもよろしいですか？'
     }
   },
   zh: {
@@ -52,7 +52,7 @@ const messages = {
       today: '今天！', passed: '过期了！', count: '剩余天数: '
     },
     text: {
-      subtitle: 'Todo Application for your long term goals', made: 'Made with Nuxt', more: 'For more infirmation...', none: '请追加项目'
+      subtitle: 'Todo Application for your long term goals', made: 'Made with Nuxt', more: 'For more infirmation...', none: '请追加项目', warning: '真的要全部消除吗？'
     }
   }
 }
