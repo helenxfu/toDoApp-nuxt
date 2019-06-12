@@ -43,46 +43,60 @@ export default {
   data() {
     return {
       todos: [
-        { id: 1,
-          title: 'make it work',
+        {
+          id: 1,
+          title: 'React',
           priority: 0,
-          category: 'Nuxt',
-          limit: '2019-02-15',
+          category: 'React',
+          limit: '2019-05-14',
           completed: false
         },
-        { id: 2,
-          title: 'chocolate fudge',
-          priority: 1,
-          category: 'JS',
-          limit: '2019-02-11',
-          completed: false
-        },
-        { id: 3,
-          title: '!"#$%&',
-          priority: 2,
+        {
+          id: 2,
+          title: 'Vue',
+          priority: 0,
           category: 'Vue',
-          limit: '2019-02-22',
+          limit: '2019-06-11',
           completed: false
         },
-        { id: 4,
-          title: 'Philosophy',
+        {
+          id: 3,
+          title: 'Portfolio',
+          priority: 0,
+          category: 'Personal',
+          limit: '2019-07-22',
+          completed: false
+        },
+        {
+          id: 4,
+          title: 'Statistics',
           priority: 2,
           category: 'CrashCourse',
           limit: '2019-12-22',
           completed: false
         },
-        { id: 5,
+        {
+          id: 5,
           title: 'CS50',
-          priority: 0,
-          category: 'YouTube',
-          limit: '2019-05-12',
-          completed: false
-        },
-        { id: 6,
-          title: 'Modal',
           priority: 1,
           category: 'YouTube',
-          limit: '2019-02-22',
+          limit: '2019-07-12',
+          completed: false
+        },
+        {
+          id: 6,
+          title: 'Illustrator crashcourse',
+          priority: 2,
+          category: 'Adobe',
+          limit: '2019-08-22',
+          completed: false
+        },
+        {
+          id: 7,
+          title: 'Objective programming',
+          priority: 2,
+          category: 'Youtube',
+          limit: '2019-05-02',
           completed: false
         }
       ]
@@ -100,13 +114,19 @@ export default {
       this.todos.splice(x, 1, changeTodo)
     },
     orderPriority() {
-      this.todos.sort((a, b) => b.priority - a.priority).sort(done => done.completed ? 1 : -1)
+      this.todos
+        .sort((a, b) => b.priority - a.priority)
+        .sort(done => (done.completed ? 1 : -1))
     },
     orderDeadline() {
-      this.todos.sort((a, b) => new Date(b.limit) - new Date(a.limit)).sort(done => done.completed ? 1 : -1)
+      this.todos
+        .sort((a, b) => new Date(b.limit) - new Date(a.limit))
+        .sort(done => (done.completed ? 1 : -1))
     },
     orderCategory() {
-      this.todos.sort((a, b) => a.category < b.category ? 1 : -1).sort(done => done.completed ? 1 : -1)
+      this.todos
+        .sort((a, b) => (a.category < b.category ? 1 : -1))
+        .sort(done => (done.completed ? 1 : -1))
     },
     deleteAll() {
       this.todos = []
@@ -164,23 +184,26 @@ a {
 }
 
 @media screen and (max-width: 930px) {
-  .leftScreen, .rightScreen {
+  .leftScreen,
+  .rightScreen {
     width: 100%;
   }
   .rightBit {
-    display:flex;
+    display: flex;
   }
-  #status, #control {
+  #status,
+  #control {
     width: 50%;
     padding: 5px;
   }
 }
 
-@media screen and (max-width: 550px){
+@media screen and (max-width: 550px) {
   .rightBit {
     display: block;
   }
-  #status, #control {
+  #status,
+  #control {
     width: 100%;
     padding: 0;
   }

@@ -11,8 +11,8 @@ export default {
 </script>
 
 <style scoped>
- div {
+div {
   background-color: rgb(208, 254, 255);
   padding: 5px 12px 3px 12px;
- }
+}
 </style>

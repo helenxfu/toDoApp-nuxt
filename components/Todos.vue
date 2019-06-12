@@ -36,7 +36,7 @@ export default {
 </script>
 
 <style scoped>
-div{
+div {
   border: 0.5px solid rgb(136, 113, 129);
   border-radius: 10px;
 }

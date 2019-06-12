@@ -2,19 +2,18 @@
   <div id="modal">
     <div id="modalContent">
       <div id="top">
-        <div><h3>{{ $t('forms.titleEditData') }}</h3></div>
+        <div>
+          <h3>{{ $t('forms.titleEditData') }}</h3>
+        </div>
         <div>
           <button @click="$emit('close')">
             &times;
           </button>
         </div>
-      </div><hr>
+      </div>
+      <hr>
       <!-- @edit-todo="(changeTodo) => {$emit('edit-todo', changeTodo)}" -->
-      <EditTodo
-        :todo="todo"
-        @edit-todo="editTodo"
-        @close="$emit('close')"
-      />
+      <EditTodo :todo="todo" @edit-todo="editTodo" @close="$emit('close')" />
     </div>
   </div>
 </template>
@@ -44,7 +43,6 @@ export default {
 </script>
 
 <style scoped>
-
 #modal {
   background-color: rgba(113, 168, 168, 0.6);
   position: fixed;
@@ -66,21 +64,29 @@ export default {
   animation-name: modalScale;
   animation-duration: 1s;
 }
-#top{
+#top {
   display: flex;
   justify-content: space-between;
 }
-button{
+button {
   background-color: transparent;
   font-size: 20px;
 }
 
-@keyframes modalOpen{
-  from {opacity : 0;}
-  to {opacity : 1;}
+@keyframes modalOpen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-@keyframes modalScale{
-  from {transform: scale(0.7);}
-  to { transform: scale(1);}
+@keyframes modalScale {
+  from {
+    transform: scale(0.7);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 </style>

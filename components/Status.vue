@@ -13,7 +13,11 @@
         <tr>
           <th>
             {{ $t('status.tableComp') }}
-            <span v-if="todoComp > 0" id="delete" @click="$emit('del-completed')">
+            <span
+              v-if="todoComp > 0"
+              id="delete"
+              @click="$emit('del-completed')"
+            >
               {{ $t('status.delComp') }}
             </span>
           </th>
@@ -44,7 +48,9 @@ export default {
       return this.todos.filter(x => x.completed === true).length
     },
     todoRate: function () {
-      return this.todos.length === 0 ? this.$t('status.noTasks') : Math.round(this.todoComp / this.todos.length * 100) + '%'
+      return this.todos.length === 0
+        ? this.$t('status.noTasks')
+        : Math.round((this.todoComp / this.todos.length) * 100) + '%'
     }
   }
 }
@@ -55,7 +61,9 @@ table {
   width: 100%;
   margin-bottom: 10px;
 }
-table, th, td {
+table,
+th,
+td {
   border: 1px solid rgb(161, 148, 148);
   border-collapse: collapse;
   padding: 15px;
@@ -67,7 +75,7 @@ tr:nth-child(even) {
 }
 #delete {
   font-size: 5px;
-  color:rgb(75, 114, 150);
+  color: rgb(75, 114, 150);
   font-weight: normal;
   cursor: pointer;
   display: inline-block;

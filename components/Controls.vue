@@ -35,7 +35,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'Controls',
   methods: {
@@ -47,13 +46,13 @@ export default {
 </script>
 
 <style scoped>
-#container{
+#container {
   margin-bottom: 10px;
 }
-.buttonRow{
+.buttonRow {
   display: flex;
 }
-button{
+button {
   width: 100%;
   background-color: rgb(177, 153, 153);
   color: rgb(51, 25, 75);
@@ -63,12 +62,12 @@ button{
   border-radius: 20px;
   box-shadow: 0 2px #999;
 }
-.buttonDelete{
+.buttonDelete {
   background-color: rgb(233, 224, 224);
   box-shadow: 0px 2px rgb(116, 22, 22);
   color: red;
 }
-h4{
+h4 {
   padding-top: 5px;
 }
 </style>

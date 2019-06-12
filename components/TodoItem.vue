@@ -1,21 +1,38 @@
 <template>
   <div class="container">
-    <div class="divTitle" :class="{'is-passed-title':passed, 'is-complete-title':todo.completed}" :style="{backgroundColor: colors[0][todo.priority]}">
+    <div
+      class="divTitle"
+      :class="{'is-passed-title':passed, 'is-complete-title':todo.completed}"
+      :style="{backgroundColor: colors[0][todo.priority]}"
+    >
       <div class="title leftSpan">
-        {{ todo.title }}
+        <p>{{ todo.title }}</p>
       </div>
       <div class="rightSpan">
-        {{ todo.category }}
+        <p>{{ todo.category }}</p>
       </div>
     </div>
-    <div class="divBody" :class="{'is-passed':passed, 'is-complete':todo.completed}" :style="{backgroundColor: colors[1][todo.priority]}">
+    <div
+      class="divBody"
+      :class="{'is-passed':passed, 'is-complete':todo.completed}"
+      :style="{backgroundColor: colors[1][todo.priority]}"
+    >
       <div class="leftSpan">
-        <span><b>{{ $t('forms.titlePriority') }}:</b> {{ priorityName[todo.priority] }}</span>
-        <span><b>{{ $t('forms.titleLimit') }}:</b> {{ todo.limit }}</span>
+        <span>
+          <b>{{ $t('forms.titlePriority') }}:</b>
+          {{ priorityName[todo.priority] }}
+        </span>
+        <span>
+          <b>{{ $t('forms.titleLimit') }}:</b>
+          {{ todo.limit }}
+        </span>
         <span>[{{ dateRemain() }}]</span>
       </div>
       <div class="rightSpan">
-        <label><input type="checkbox" @change="markComplete">{{ $t('forms.completed') }}</label>
+        <label>
+          <input type="checkbox" @change="markComplete">
+          {{ $t('forms.completed') }}
+        </label>
         <button @click="showModal = true">
           {{ $t('forms.buttonEdit') }}
         </button>
@@ -48,8 +65,14 @@ export default {
   data() {
     return {
       colors: [
-        ['rgb(247, 255, 199)', 'rgb(193, 255, 184)', 'rgb(224, 254, 255)'], ['rgb(239, 255, 146)', 'rgb(159, 223, 153)', 'rgb(167, 230, 233)']],
-      priorityName: [this.$t('forms.priorityHigh'), this.$t('forms.priorityMid'), this.$t('forms.priorityLow')],
+        ['rgb(247, 255, 199)', 'rgb(193, 255, 184)', 'rgb(224, 254, 255)'],
+        ['rgb(239, 255, 146)', 'rgb(159, 223, 153)', 'rgb(167, 230, 233)']
+      ],
+      priorityName: [
+        this.$t('forms.priorityHigh'),
+        this.$t('forms.priorityMid'),
+        this.$t('forms.priorityLow')
+      ],
       passed: false,
       showModal: false
     }
@@ -67,8 +90,14 @@ export default {
       this.todo.completed = !this.todo.completed
     },
     dateRemain() {
-      const countDown = (new Date(this.todo.limit) - new Date(dateFormat.dateToday())) / 86400000
-      return countDown > 0 ? this.$t('countDown.count') + countDown : countDown === 0 ? this.$t('countDown.today') : this.$t('countDown.passed')
+      const countDown =
+        (new Date(this.todo.limit) - new Date(dateFormat.dateToday())) /
+        86400000
+      return countDown > 0
+        ? this.$t('countDown.count') + countDown
+        : countDown === 0
+          ? this.$t('countDown.today')
+          : this.$t('countDown.passed')
     },
     editTodo(changeTodo) {
       this.$emit('edit-todo', changeTodo)
@@ -78,28 +107,28 @@ export default {
 </script>
 
 <style scoped>
-.divTitle{
+.divTitle {
   padding: 5px 12px 3px 12px;
   display: flex;
   justify-content: space-between;
 }
-.divBody{
+.divBody {
   padding: 3px 12px 5px 12px;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
-span{
-  display:inline-block;
+span {
+  display: inline-block;
 }
-.title{
-  color:rgb(28, 45, 122);
+.title {
+  color: rgb(28, 45, 122);
   font-size: 14px;
 }
-input[type=checkbox] {
+input[type="checkbox"] {
   cursor: pointer;
 }
-button{
+button {
   padding: 5px;
   border-radius: 15px;
   background-color: rgb(208, 254, 255);

@@ -15,27 +15,25 @@
         >
       </div>
       <div class="inputSection">
-        <label>
-          {{ $t('forms.titlePriority') }}
-        </label>
+        <label>{{ $t('forms.titlePriority') }}</label>
         <br>
         <label class="radioButtonTitle">
-          <input
-            v-model="priority"
-            type="radio"
-            name="priority"
-            value="0"
-          >{{ $t('forms.priorityHigh') }}
+          <input v-model="priority" type="radio" name="priority" value="0">
+          {{ $t('forms.priorityHigh') }}
         </label>
         <label class="radioButtonTitle">
-          <input v-model="priority" type="radio" name="priority" value="1">{{ $t('forms.priorityMid') }}
+          <input v-model="priority" type="radio" name="priority" value="1">
+          {{ $t('forms.priorityMid') }}
         </label>
         <label class="radioButtonTitle">
-          <input v-model="priority" type="radio" name="priority" value="2">{{ $t('forms.priorityLow') }}
+          <input v-model="priority" type="radio" name="priority" value="2">
+          {{ $t('forms.priorityLow') }}
         </label>
       </div>
       <div class="inputSection">
-        <label>{{ $t('forms.titleCategory') }}</label><br><input
+        <label>{{ $t('forms.titleCategory') }}</label>
+        <br>
+        <input
           v-model="category"
           type="text"
           class="inputText"
@@ -45,13 +43,9 @@
         >
       </div>
       <div class="inputSection">
-        <label>{{ $t('forms.titleLimit') }}</label><br><input
-          v-model="limit"
-          type="date"
-          class="inputText"
-          name="limit"
-          required
-        >
+        <label>{{ $t('forms.titleLimit') }}</label>
+        <br>
+        <input v-model="limit" type="date" class="inputText" name="limit" required>
       </div>
       <div class="inputSection">
         <input type="submit" :value="$t('forms.buttonSubmit')">
